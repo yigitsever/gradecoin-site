@@ -26,7 +26,7 @@ This is enforced with your Student ID (e123456) and a one time password you will
 
 ## Cipher Initialization
 
-> Since we are working with AES-128, both key and IV should be 128 bits (or 16 hexadecimal characters)
+> Since we are working with AES-128, both key and IV should be 128 bits (or 32 hexadecimal characters)
 
 - Pick a short temporary key (`k_temp`)
 - Pick a random IV [1](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Initialization_vector_(IV)) [2](https://en.wikipedia.org/wiki/Initialization_vector) (`iv`).
