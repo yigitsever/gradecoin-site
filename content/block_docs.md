@@ -4,11 +4,19 @@ description = "Block Documentation"
 weight = 10
 +++
 
-A block that was proposed to commit Transactions in `transaction_list` to the
-ledger with a nonce that made `hash` valid; 6 zeroes at the left hand side of the
-hash (24 bytes).
+> Blocks commit proposed transactions into the ledger.
+> A transaction that do not appear on a valid block is not accepted by the network.
 
-We are _mining_ using [blake2s](https://www.blake2.net/) algorithm, which produces 256 bit hashes. Hash/second is roughly {{ exp(num="20x10", exponent="3") }} on my machine, a new block can be mined in around 4-6 minutes.
+Blocks in Gradecoin are proposed to commit [Transactions](@/transaction_docs.md) that were proposed previously to the system.
+`transaction_list` of the Block should be filled with valid transactions to be committed.
+Blocks are valid when they are proposed with a `nonce` that produces a `hash` value with 6 zeroes (24 bits) at the left hand side.
+
+We are _mining_ using [blake2s](https://www.blake2.net/) algorithm, which produces 256 bit hashes.
+Hash/second is roughly {{ exp(num="20x10", exponent="3") }} on my machine, a new block can be mined in around 4-6 minutes.
+
+{% tidbit() %}
+We have seen blocks that came in within a minute during the testnet phase!
+{% end %}
 
 # Requests
 
@@ -16,14 +24,13 @@ We are _mining_ using [blake2s](https://www.blake2.net/) algorithm, which produc
 A HTTP `GET` request to [/block](/block) endpoint will return the latest mined block.
 
 ## POST
-
-A HTTP `POST` request with Authorization using JWT will allow you to propose your own blocks.
+A HTTP `POST` request with Authorization using [JWT](@/JWT.md) will allow you to propose your own blocks.
 
 # Fields
 ```
-transaction_list: [array of Fingerprints]
+transaction_list: [array of Transaction IDs]
 nonce: unsigned 32-bit integer
-timestamp: ISO 8601 <date>T<time>
+timestamp: ISO 8601 Timestamp (<date>T<time>)
 hash: String
 ```
 
@@ -36,8 +43,12 @@ The _mining_ process for the hash involves;
 If the resulting hash is valid, then you can create a `Block` JSON object with the found `nonce` and `hash`.
 
 # Hash
+`tha` field in [jwt documentation](@/JWT.md) stands for "The Hash" in the context of blocks.
+Fill this with the `hash` value you found during the mining process.
 
-```tha``` field in [jwt documentation](/jwt) in fact stands for "The Hash", in the case of a post request for a block, you need to use hash field of the block.
+# Block Rules
+- Blocks should include some minimum number of transactions.
+- Blocks cannot have duplicate transactions.
 
-
-[ISO 8601 Reference](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)
+# References
+- [ISO 8601 Reference](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)

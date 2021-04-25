@@ -12,7 +12,7 @@
         Mine your own grades
     </h1>
     <h3 class="title-text">
-        <b>Gradecoin</b> is the latest cutting edge blockchain technology agile grading framework that drives organic engagement and other buzzwords, with big data mining search engine optimization
+        <b>Gradecoin</b> is the latest cutting edge blockchain technology agile grading framework that drives organic engagement and other buzzwords, with big data mining search engine optimization (now supporting NFTs)
     </h3>
     <div>
     </div>
@@ -20,45 +20,13 @@
 <img class="hero-image" style="width: 40%" src="{{ get_url(path="gradecoin.png") }}">
 
 <div class="explore-more text"
-     onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+     onclick="document.getElementById('welcome-to-gradecoin').scrollIntoView({behavior: 'smooth'})">
     ⇩ Learn How ⇩
 </div>
 
-<style>
-
-.hero section {
-    padding: 0 5rem;
-}
-
-@media screen and (max-width: 768px) {
-    .hero section {
-        padding: 0 2rem;
-    }
-
-    .hero-image {
-        display: none
-    }
-
-}
-footer {
-    color: #8b8b8b;
-}
-</style>
 {% endblock hero %}
 
 {% block content %}
-
-<div class="tcontainer" id="features">
-    <div class="ticker-wrap">
-        <div class="ticker-move">
-            <div class="ticker-item"><b>News:</b></div>
-            <div class="ticker-item">Gradecoin is in testnet mode, API is not stable, everything might reset at any time.</div>
-            <div class="ticker-item">Blocks now only need 1 transaction in them, happy testing! </div>
-            <div class="ticker-item">It was possible (and hilarious) to mine a new block with just 1 transaction, it is now fixed</div>
-        </div>
-    </div>
-</div>
-
 {{ section.content | safe }}
 {% endblock content %}
 

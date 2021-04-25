@@ -55,3 +55,21 @@ li p {
 .ticker-item::before {
     content: "  ✑  ";
 }
+
+.hero section {
+    padding: 0 5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hero section {
+        padding: 0 2rem;
+    }
+
+    .hero-image {
+        display: none
+    }
+
+}
+footer {
+    color: #8b8b8b;
+}
