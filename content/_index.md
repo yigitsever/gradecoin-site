@@ -34,6 +34,9 @@ The first transactions of a block is called the `coinbase`. They are the **autho
 Gradecoin uses 2048 bit RSA keypairs.
 
 # Services
+
+Please respect the system and others. Keep your request rate below a reasonable limit. Programming a bot is absolutely fine as long as it's not aggressively sending requests.
+
 ## /register
 - Create your own 2048 bit RSA `keypair`
 - Download `Gradecoin`'s Public Key from [Moodle](https://odtuclass.metu.edu.tr/my/)
