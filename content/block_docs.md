@@ -34,6 +34,12 @@ timestamp: ISO 8601 Timestamp (<date>T<time>)
 hash: String
 ```
 
+## Coinbase
+The proposer of the block is identified by the first transaction in the `transaction_list`.
+This transaction is called the *coinbase* and will get awarded the block mining reward for their work.
+
+> Place one of your own transactions as the first item in `transaction_list`
+
 # Mining
 The _mining_ process for the hash involves;
 - Creating a temporary JSON object with `transaction_list`, `timestamp` and `nonce` values
