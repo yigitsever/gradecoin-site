@@ -25,7 +25,7 @@ This is enforced with your Student ID (e123456) and a one time password you rece
 > Since we are working with AES-128, both key and IV should be 128 bits (or 32 hexadecimal characters)
 
 - Pick a short temporary key (`k_temp`)
-- Pick a random IV ([1](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Initialization_vector_(IV))) ([2](https://en.wikipedia.org/wiki/Initialization_vector) (`iv`)).
+- Pick a random IV `iv` ([1](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Initialization_vector_(IV))) ([2](https://en.wikipedia.org/wiki/Initialization_vector)).
 
 ## Encryption
 - Encrypt the serialized string of `P_AR` with 128 bit block [AES](https://en.wikipedia.org/wiki/Initialization_vector) in [CBC](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC) mode with [Pkcs7 padding](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Padding) using the temporary key (`k_temp`), the result is `C_AR`. Encode this with base64.
