@@ -48,7 +48,7 @@ Please respect the system and others. Keep your request rate below a reasonable 
 ## /transaction
 - You can offer a [Transaction](@/transaction_docs.md) with a POST request
     - The request should have `Authorization`
-    - The request header should be signed by the Public Key of the `by` field in the transaction
+    - The request header should be signed by the Public Key of the `source` field in the transaction
 - Fetch the list of `Transaction`s with a GET request
 - For more information, check our [transaction](@/transaction_docs.md) page
 
