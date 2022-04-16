@@ -7,8 +7,8 @@ weight = 10
 > Blocks commit proposed transactions into the ledger.
 > A transaction that do not appear on a valid block is not accepted by the network.
 
-Blocks in Gradecoin are proposed to commit [Transactions](@/transaction_docs.md) that were proposed previously to the system.
-`transaction_list` of the Block should be filled with valid transactions to be committed.
+We use Blocks to commit proposed [Transactions](@/transaction_docs.md) to the ledger in order to realize them.
+`transaction_list` of the Block is filled with valid transactions.
 Blocks are valid when they are proposed with a `nonce` that produces a `hash` value with 6 zeroes (24 bits) at the left hand side.
 
 We are _mining_ using [blake2s](https://www.blake2.net/) algorithm, which produces 256 bit hashes.
@@ -53,7 +53,7 @@ If the resulting hash is valid, then you can create a `Block` JSON object with t
 Fill this with the `hash` value you found during the mining process.
 
 # Block Rules
-- Blocks should include some minimum number of transactions.
+- Blocks have to include a minimum number of transactions.
 - Blocks cannot have duplicate transactions.
 
 # References
