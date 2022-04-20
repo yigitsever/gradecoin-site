@@ -44,16 +44,16 @@ Programming a bot is absolutely fine as long as it's not aggressively sending re
 
 ## /register
 - Create your own 2048 bit RSA `keypair`
-- Download `Gradecoin`'s Public Key from [Moodle](https://odtuclass.metu.edu.tr/my/)
-- Encrypt your [JSON](https://www.json.org/json-en.html) wrapped `Public Key`, `Student ID` and one time `passwd` using Gradecoin's Public Key
-- Your public key is now in our database and can be used to sign your JWT's during requests
-- **Don't forget your Public Key**
+- Download `Gradecoin`'s public key from [ODTUClass](https://odtuclass.metu.edu.tr/my/)
+- Encrypt your [JSON](https://www.json.org/json-en.html) wrapped `Public Key`, `Student ID` and one time `passwd` using Gradecoin's public key
+- Your public key is now in the database. You can use your private key to sign your JWTs during requests
+- **Don't forget your public key**
 - For more information, check the [register](@/register_docs.md) page
 
 ## /transaction
 - You can offer a [Transaction](@/transaction_docs.md) with a POST request
     - The request should have `Authorization`
-    - The request header should be signed by the Public Key of the `source` field in the transaction
+    - The request header should be signed by the private key of the `source` field in the transaction
 - Fetch the list of `Transaction`s with a GET request
 - For more information, check our [transaction](@/transaction_docs.md) page
 
@@ -64,7 +64,7 @@ Programming a bot is absolutely fine as long as it's not aggressively sending re
 - Fetch the last accepted `Block` with a GET request
 - For more information, check our [block](@/block_docs.md) page
 
-> `Authorization`: The request header should have Bearer JWT.Token signed with Student Public Key
+> `Authorization`: The request header should have Bearer JWT.Token signed with student's private key
 
 ## /user
 - Looking for people to conduct business with? Everyone is listed here!
