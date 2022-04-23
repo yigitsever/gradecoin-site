@@ -35,7 +35,8 @@ Or; without any whitespace, separated with `:` and `,`.
 
 # Transaction Rules
 - Transactions should be sent from your account (`source`) to any other account (`target`).
+- No two transaction with the same `source`/`target` pair can appear on the pending transaction list [/transactions](/transaction).
 - Transactions generate traffic which is something we desperately need in Gradecoin, so for every transaction you send, some Gradecoin will be generated out of thin air and will appear on the target.
 - Don't worry if your transaction goes unaccepted! Transactions do not disappear until they are committed into the ledger with a block.
-- Every transaction has a unique ID generated from the `source` and `target` fields. No two transaction with the same ID can appear on the pending transaction list [/transactions](/transaction)
+- Every transaction has a unique ID generated using the `source`, `target` and `timestamp` fields.
 - Transactions have an upper amount limit.

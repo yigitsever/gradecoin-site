@@ -11,3 +11,6 @@ A fingerprint is a 256 bit 64 character hexadecimal user identifier for users. F
 
 ## Fingerprint Generation
 A user's finger print is generated via applying SHA256 sum of the user's public RSA key.
+
+# Config
+The [/config](/config) endpoint will return the current parameters that Gradecoin uses.
