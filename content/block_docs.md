@@ -9,7 +9,8 @@ weight = 10
 
 We use Blocks to commit proposed [Transactions](@/transaction_docs.md) to the ledger in order to realize them.
 `transaction_list` of the Block is filled with valid transactions.
-Blocks are valid when they are proposed with a `nonce` that produces a `hash` value with 6 zeroes (24 bits) at the left hand side.
+In order to create a valid block, the proposer must find a suitable `nonce` value that makes the `hash` of the block valid.
+The properties a valid hash should have will be explained in subsequent sections.
 
 We are _mining_ using [blake2s](https://www.blake2.net/) algorithm, which produces 256 bit hashes.
 Hash/second is roughly {{ exp(num="20x10", exponent="3") }} on my machine, a new block can be mined in around 4-6 minutes.
@@ -35,16 +36,24 @@ hash: String
 ```
 
 ## Coinbase
-The proposer of the block is identified by the first transaction in the `transaction_list`.
-This transaction is called the *coinbase* and will get awarded the block mining reward for their work.
+The proposer of the block is identified by the source of the first transaction in `transaction_list`.
+This transaction is called the *coinbase*, and its source will get awarded by the block mining reward for their work.
+The amount of the reward is determined by `block_reward` field of [`/config`](/config).
 
-> Place one of your own transactions as the first item in `transaction_list`
+> Place one of your own transactions as the first item in `transaction_list`.
+> Otherwise, someone else will receive the reward!
 
 # Mining
 The _mining_ process for the hash involves;
-- Creating a temporary JSON object with `transaction_list`, `timestamp` and `nonce` values
+- Creating a temporary JSON object with `transaction_list`, `nonce`, and `timestamp` values
 - Serializing it
+    - **NOTE:** Serialized JSON must comply with the rules explained in hash section of [transaction](@/transaction_docs.md) page.
+    - The order of keys should be as follows: `transaction_list`, `nonce`, `timestamp`.
 - Calculating blake2s hash of the serialized string
+- Checking if the hash is valid
+    - The hash is considered valid if its hexadecimal representation starts with an arbitrary number of zeros.
+    - This number is given by `hash_zeros` field of [`/config`](/config).
+    - For instance, if `hash_zeros` is 6, a valid hash must start with 6 hexadecimal zeros.
 
 If the resulting hash is valid, then you can create a `Block` JSON object with the found `nonce` and `hash`.
 
@@ -54,6 +63,8 @@ Fill this with the `hash` value you found during the mining process.
 
 # Block Rules
 - Blocks have to include a minimum number of transactions.
+    - `block_transaction_count` field of [`/config`](/config) yields this value.
+    - See [misc Page](@/misc_docs.md) for more information about configuration.
 - Blocks cannot have duplicate transactions.
 
 # References
