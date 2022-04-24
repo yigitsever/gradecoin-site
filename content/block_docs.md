@@ -41,7 +41,7 @@ This transaction is called the *coinbase*, and its source will get awarded by th
 The amount of the reward is determined by `block_reward` field of [`/config`](/config).
 
 > Place one of your own transactions as the first item in `transaction_list`.
-> Otherwise, someone else will receive the reward!
+> Otherwise, the server will not be able to authenticate you.
 
 # Mining
 The _mining_ process for the hash involves;
