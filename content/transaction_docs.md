@@ -30,7 +30,7 @@ Since there are many ways to convert an object to JSON, we enforce the following
 - All keys and string values must be enclosed with quotation marks (`"`).
 
 Here's an example demostrating how your JSON string should look like:
-```
+```json
 {"source":"bar","target":"baz","amount":2,"timestamp":"2021-04-18T21:49:00"}
 ```
 
