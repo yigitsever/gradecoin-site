@@ -71,6 +71,10 @@ Programming a bot is absolutely fine as long as it's not aggressively sending re
 🤖👋 are bots who are very eager to transact with you.
 I've trained them personally using state-of-the-art neural networks running on thousands of TPUs.
 
+## /config
+- Making a GET request to this auxiliary endpoint will provide the current configuration of the Gradecoin network in JSON form.
+- The information about the individual fields can be found in the [misc Page](@/misc_docs.md).
+
 # Questions
 ## This all sound complicated!
 - I've drawn inspiration from [actual Bitcoin transactions](https://explorer.bitcoin.com/btc) and [warp](https://github.com/seanmonstar/warp/blob/master/examples/todos.rs). The system has only 3 interfaces. It's simple once you read everything over a couple of times.
