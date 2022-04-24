@@ -49,6 +49,10 @@ The _mining_ process for the hash involves;
 - Serializing it
     - **NOTE:** Serialized JSON must comply with the rules explained in hash section of [transaction](@/transaction_docs.md) page.
     - The order of keys should be as follows: `transaction_list`, `nonce`, `timestamp`.
+	- Example:
+```json
+{"transaction_list":["a1a3","cde4","60e7","4e04"],"nonce":5342433,"timestamp":"2022-04-23T23:49:24.622651"}
+```
 - Calculating blake2s hash of the serialized string
 - Checking if the hash is valid
     - The hash is considered valid if its hexadecimal representation starts with an arbitrary number of zeros.
