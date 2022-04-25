@@ -24,6 +24,7 @@ The [/config](/config) endpoint will return the current parameters that Gradecoi
 - `hash_zeros`: Determines the number of zero hexadecimal characters a correct hash should start with.
 - `register_bonus`: Initial registration bonus. This will determine your balance after registration.
 - `block_reward`: Coinbase reward. When a block is proposed successfully and added to ledger, the proposer will gain this amount of coins.
+- `tx_gas_fee`: New transaction proposals must pay this amount
 - `tx_upper_limit`: Upper limit for transaction amount.
 - `tx_lower_limit`: Lower limit for transaction amount.
 - `tx_traffic_reward`: Transaction traffic reward, used to incentivize users to make transactions. When an account sends money, it will receive this reward.
