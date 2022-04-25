@@ -31,3 +31,6 @@ The [/config](/config) endpoint will return the current parameters that Gradecoi
     - Each key will be the fingerprint of a bot.
     - Each value will be another JSON object. Currently, it only contains one self-explanatory field: `starting_balance`.
 
+
+# Version
+The [/version](/version) endpoint will return the current version that's currently live on this server.

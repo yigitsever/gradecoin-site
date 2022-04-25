@@ -37,7 +37,6 @@ The first transactions of a block is called the `coinbase`. They are the **autho
 Gradecoin uses 2048 bit RSA keypairs.
 
 # Services
-
 Please respect the system and others.
 Keep your request rate below a reasonable limit.
 Programming a bot is absolutely fine as long as it's not aggressively sending requests.
@@ -74,6 +73,10 @@ I've trained them personally using state-of-the-art neural networks running on t
 ## /config
 - Making a GET request to this auxiliary endpoint will provide the current configuration of the Gradecoin network in JSON form.
 - The information about the individual fields can be found in the [misc Page](@/misc_docs.md).
+
+## /version
+- Shows the current version of Gradecoin.
+- You can use this to compare the live version to the version on GitHub.
 
 # Questions
 ## This all sound complicated!
@@ -113,9 +116,6 @@ At the end of the _simulation_, your Gradecoin balance will be your grade. I wil
 - random assortment of bash scripts
 
 If your favourite programming language is missing please let me know 🤷?
-
-## Can my friends play?
-Sure! They can get in contact with me until the end of the testnet phase.
 
 ## How and or Why?
 - [Built](https://xkcd.com/2314/), [with](https://lofi.cafe/) [Rust](https://xkcd.com/2418/)
