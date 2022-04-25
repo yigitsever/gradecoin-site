@@ -23,7 +23,7 @@ highlight_theme = "subway-moscow"
 juice_logo_name = "Gradecoin"
 juice_logo_path = "gradecoin.png"
 juice_extra_menu = [
-    { title = "why?", link = "https://twitter.com/fppf_gf/status/1465754756564099072"},
-    { title = "whyyy?", link = "https://www.youtube.com/watch?v=YQ_xWvX1n9g"}
+    { title = "code", link = "https://github.com/yigitsever/gradecoin" }
+    { title = "why?", link = "https://twitter.com/_AlexHirsch/status/1448782706871980032"},
 ]
 
