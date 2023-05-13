@@ -4,10 +4,10 @@ sort_by = "weight"
 +++
 
 # Welcome to Gradecoin!
-Blockchains are incredibly simple but they can seem very complicated.
+Blockchains are incredibly simple, but they can seem very complicated.
 We will see how they work and practice programming _production grade_ cryptography code.
 
-This server is the sandbox for PA1 and it iss currently running the Gradecoin application.
+This server is the sandbox for PA1 and it is currently running the Gradecoin application.
 Gradecoin is the faux currency we will use to simulate a blockchain network.
 **At the end of the simulation, the amount of Gradecoin you hold will be your PA1 grade.**
 
@@ -16,18 +16,11 @@ Craft [Transaction](@/transaction_docs.md) proposals and tag them using [JWTs](@
 When there are enough transactions then you can propose [Blocks](@/block_docs.md).
 Blocks need to be _mined_ beforehand using Proof-of-work a.k.a. brute force.
 
-Gradecoin offers 3 endpoints at [/register](/register), [/block](/block) and [/transaction](/transaction). You can only send GET requests to /block and /transaction without authorization.
-The server is programmed in [RESTful](https://www.service-architecture.com/articles/web-services/representational_state_transfer_rest.html) architecture, there are no `DELETE`, `PUT` or `UPDATE` operations, though.
-
 Gradecoin uses a Proof-of-work block accepting mechanism. It uses single round [Blake2s](https://www.blake2.net/) hashing which produces 256-bit (64 hexadecimal characters) output. The [target](https://wiki.bitcoinsv.io/index.php/Target) hash is _24 bits_ or _6 hexadecimal characters_ of 0.
 
-> We're expecting you to use existing tools and implementations. Standards are hard. [Don't roll your own crypto](https://www.reddit.com/r/crypto/comments/2coqsy/dont_roll_your_own/). Feel free to ask questions. Collaborate.
+> We're expecting you to use existing tools and implementations. [Don't roll your own crypto](https://www.reddit.com/r/crypto/comments/2coqsy/dont_roll_your_own/). Feel free to ask questions. Collaborate.
 
-You might ask,
-
-> But if nobody has any Gradecoin then how do we have transactions?
-
-You get rewarded for your hard work during the authentication with some Gradecoin to start with!
+You need to authenticate yourself to Gradecoin to begin with, and get rewarded for your hard work with some Gradecoin to start with!
 Then you can earn block rewards by proposing blocks, create some Gradecoins by generating traffic on the system, or transact with our new highly trained AI bots!
 
 # Coinbase
@@ -66,7 +59,7 @@ Programming a bot is absolutely fine as long as it's not aggressively sending re
 > `Authorization`: The request header should have Bearer JWT.Token signed with student's private key
 
 ## /user
-- Looking for people to conduct business with? Everyone is listed here!
+- Looking for people to conduct business with? Everyone is listed on this page!
 🤖👋 are bots who are very eager to transact with you.
 I've trained them personally using state-of-the-art neural networks running on thousands of TPUs.
 
@@ -112,8 +105,8 @@ At the end of the _simulation_, your Gradecoin balance will be your grade. I wil
 - go
 - perl
 - python
-- rust
 - random assortment of bash scripts
+- rust
 
 If your favourite programming language is missing please let me know 🤷?
 

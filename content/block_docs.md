@@ -15,10 +15,6 @@ The properties a valid hash should have will be explained in subsequent sections
 We are _mining_ using [blake2s](https://www.blake2.net/) algorithm, which produces 256 bit hashes.
 Hash/second is roughly {{ exp(num="20x10", exponent="3") }} on my machine, a new block can be mined in around 4-6 minutes.
 
-{% tidbit() %}
-We have seen blocks that came in within a minute during the testnet phase!
-{% end %}
-
 # Requests
 
 ## GET
