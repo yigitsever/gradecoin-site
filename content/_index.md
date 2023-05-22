@@ -7,7 +7,7 @@ sort_by = "weight"
 Blockchains are incredibly simple, but they can seem very complicated.
 We will see how they work and practice programming _production grade_ cryptography code.
 
-This server is the sandbox for PA1 and it is currently running the Gradecoin application.
+This server is the sandbox for PA1, and it is currently running the Gradecoin application.
 Gradecoin is the faux currency we will use to simulate a blockchain network.
 **At the end of the simulation, the amount of Gradecoin you hold will be your PA1 grade.**
 
@@ -27,7 +27,7 @@ Then you can earn block rewards by proposing blocks, create some Gradecoins by g
 The first transactions of a block is called the `coinbase`. They are the **author** of the block proposal and if the block is accepted then they get compensated for their efforts with some Gradecoin.
 
 # Public Key Signatures
-Gradecoin uses 2048 bit RSA keypairs.
+Gradecoin uses 2048-bit RSA key pairs.
 
 # Services
 Please respect the system and others.
@@ -35,7 +35,7 @@ Keep your request rate below a reasonable limit.
 Programming a bot is absolutely fine as long as it's not aggressively sending requests.
 
 ## /register
-- Create your own 2048 bit RSA `keypair`
+- Create your own 2048-bit RSA `keypair`
 - Download `Gradecoin`'s public key from [ODTUClass](https://odtuclass.metu.edu.tr/my/)
 - Encrypt your [JSON](https://www.json.org/json-en.html) wrapped `Public Key`, `Student ID` and one time `passwd` using Gradecoin's public key
 - Your public key is now in the database. You can use your private key to sign your JWTs during requests
@@ -56,7 +56,7 @@ Programming a bot is absolutely fine as long as it's not aggressively sending re
 - Fetch the last accepted `Block` with a GET request
 - For more information, check our [block](@/block_docs.md) page
 
-> `Authorization`: The request header should have Bearer JWT.Token signed with student's private key
+> `Authorization`: The request header should have `Bearer JWT.Token` signed with student's private key
 
 ## /user
 - Looking for people to conduct business with? Everyone is listed on this page!
@@ -74,9 +74,9 @@ I've trained them personally using state-of-the-art neural networks running on t
 # Questions
 ## This all sound complicated!
 - I've drawn inspiration from [actual Bitcoin transactions](https://explorer.bitcoin.com/btc) and [warp](https://github.com/seanmonstar/warp/blob/master/examples/todos.rs). The system has only 3 interfaces. It's simple once you read everything over a couple of times.
-- Don't know where to start? Gradecoin uses RESTful API; simple `curl` commands or even your browser will work! [This website can help as well](https://curl.trillworks.com/).
+- Don't know where to start? Gradecoin uses RESTful API; simple `curl` commands or even your browser will work! [This website can help as well](https://sqqihao.github.io/trillworks.html).
 - Check out [JWT Debugger](https://jwt.io) and the corresponding [RFC](https://tools.ietf.org/html/rfc7519).
-- Remember that you are absolutely encouraged to grab off-the-shelf implementations for every cryptography primitive you will use. You can start by finding a code snippet to generate a RSA keypair?
+- Remember that you are absolutely encouraged to grab off-the-shelf implementations for every cryptography primitive you will use. You can start by finding a code snippet to generate an RSA key pair?
 - Check out [misc](@/misc_docs.md) for everything else you might be curious about.
 
 ## How do you actually earn Gradecoin?
@@ -89,12 +89,12 @@ I've trained them personally using state-of-the-art neural networks running on t
 Thank you! Please [let me know](mailto:yigit@ceng.metu.edu.tr) so we can solve it.
 
 ## I hacked the server!
-That wasn't supposed to happen :( I did not place any intentional vulnerabilities to the system so if you cracked something, it was not intended. Please don't abuse it and let me know so I can patch it.
+That wasn't supposed to happen 😢. I did not place any intentional vulnerabilities to the system so if you cracked something, it was not intended. Please don't abuse it and let me know, so I can patch it.
 
 ## I want to contribute!
-Thank you! The code for Gradecoin and this site are open source so you can take a look and let me know if you have any improvements, corrections, typos to point out or whatever.
+Thank you! The code for Gradecoin and this site are open source, so you can take a look and let me know if you have any improvements, corrections, typos to point out or whatever.
 Both documentation (this site) and code contributions are appreciated.
-[My git server](https://git.yigitsever.com/) will be somewhat ahead of the [GitHub](https://github.com/yigitsever/gradecoin) repository but I will sync them at every major milestone.
+[My git server](https://git.yigitsever.com/) will be somewhat ahead of the [GitHub](https://github.com/yigitsever/gradecoin) repository, but I will sync them at every major milestone.
 
 ## Submission?
 At the end of the _simulation_, your Gradecoin balance will be your grade. I will also expect your client for submission, programmed in either;

@@ -29,7 +29,7 @@ Since there are many ways to convert an object to JSON, we enforce the following
 - The order of fields should be exactly as shown above.
 - All keys and string values must be enclosed with quotation marks (`"`).
 
-Here's an example demostrating how your JSON string should look like:
+Here's an example on how your JSON string should look like:
 ```json
 {"source":"bar","target":"baz","amount":2,"timestamp":"2021-04-18T21:49:00"}
 ```
@@ -39,7 +39,7 @@ Here's an example demostrating how your JSON string should look like:
 - You cannot create multiple transactions with the same `source`/`target` pair.
 - Transactions generate traffic which is something we desperately need in Gradecoin, so for every transaction you send, some Gradecoin will be generated out of thin air and will appear on your account.
     - The amount of Gradecoin that will be generated is given by `tx_traffic_reward` field of [`/config`](/config).
-    - For example, if `tx_traffic_reward` is 1 and you send 2 coins, only 1 coin will be deduced from your account since you will be given 1 coin for generating traffic. The target will receive 2 coins.
+    - For example, if `tx_traffic_reward` is 1, and you send 2 coins, only 1 coin will be deduced from your account since you will be given 1 coin for generating traffic. The target will receive 2 coins.
 - On the other hand, transactions have to be processed which requires valuable CPU power. So, an amount named `tx_gas_fee` of [`/config`](/config) is deducted from the user on every transaction proposal to cover the cost.
 - Don't worry if your transaction goes unaccepted! Transactions do not disappear until they are committed into the ledger with a block.
 - Every transaction has a unique ID generated using the `source`, `target` and `timestamp` fields.
